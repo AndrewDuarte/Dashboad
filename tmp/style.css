@@ -1,0 +1,283 @@
+/* Font Icons */
+@font-face {
+  font-family: 'customFont';
+  src:  url('../font/customFont/fonts/customFont.eot?hd8grf');
+  src:  url('../font/customFont/fonts/customFont.eot?hd8grf#iefix') format('embedded-opentype'),
+    url('../font/customFont/fonts/customFont.ttf?hd8grf') format('truetype'),
+    url('../font/customFont/fonts/customFont.woff?hd8grf') format('woff'),
+    url('../font/customFont/fonts/customFont.svg?hd8grf#customFont') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Typeography */
+@font-face {
+   font-family: 'proxima-nova';
+   src: url('../font/proximanova-semibold-webfont.woff') format('woff'),
+        url('../font/proximanova-semibold-webfont.woff2') format('woff2'),
+        url('../font/proximanova-semibold-webfont.eot') format('eot'),
+        url('../font/proximanova-semibold-webfont.ttf') format('woff2');
+        font-weight: 800;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'customFont' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-analyse:before {
+  content: "\e900";
+  font-size: 30px;
+  color: #8C8C8C;
+}
+.icon-automate:before {
+  content: "\e901";
+  font-size: 30px;
+  color: #8C8C8C;
+}
+.icon-dashboard:before {
+  content: "\e902";
+  font-size: 30px;
+  color: #8C8C8C;
+}
+.icon-explore:before {
+  content: "\e903";
+  font-size: 30px;
+  color: #8C8C8C;
+}
+.icon-publish:before {
+  content: "\e904";
+  font-size: 30px;
+  color: #8C8C8C;
+}
+.icon-settings:before {
+  content: "\e905";
+  font-size: 30px;
+  color: #8C8C8C;
+}
+
+/* ---------- */
+
+/* Stylesheet Components: 
+
+1. GLOBAL STYLE
+----
+2. HEADER BAR
+3. LEFT MENU 
+4. CONTENT
+----
+5. @MEDIA
+
+-----------------------------*/
+
+/* 1. GLOBAL STYLE */
+
+body{
+  overflow-x: hidden
+}
+
+a, a:hover, a:active, a:focus{text-decoration: none;}
+
+h1{
+  margin: 0;
+  font-family: 'proxima-nova';
+  font-size: 2.2em;
+}
+
+h1::after{
+  content: " - Page";
+  font-size: 18px;
+  font-style: italic;
+}
+
+h2{
+  font-size: 1.8em;
+}
+
+.v-align{
+  display: flex;
+  align-items: center;
+  height: inherit
+}
+
+/* ---- */
+
+/* 2. HEADER BAR */
+
+header {
+  box-shadow: 0 5px 5px #ccc;
+  height: 60px;
+  position: relative;
+  z-index: 10;
+ }
+
+/* 3. LEFT MENU */
+
+#wrapper {
+    padding-left: 250px;
+}
+
+#wrapper {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled {
+    padding-left: 0;
+}
+
+
+#sidebar-wrapper {
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  background: #000;
+  height: 100%;
+  margin-left: -250px;
+  overflow-y: auto;
+  transition: all 0.5s ease;
+  z-index: 1000;
+ }
+
+.sidebar-nav {
+    position: absolute;
+    background-color: #F4F4F4;
+    height: 100vh;
+    top: 60px;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav button {
+    text-indent: 20px;
+    line-height: 40px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: #4D4D4D;
+    font-size: 18px;
+    font-family: 'proxima-nova';
+
+}
+
+i[class*="icon-"] {
+ margin-right: 14px; 
+}
+
+.dash{
+  padding: 18px;
+  width: 100%;
+  font-family: 'proxima-nova';
+  text-align: left;
+  background: #F7F7F5;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+button.accordion {
+    padding: 18px;
+    width: 100%;
+    font-family: 'proxima-nova';
+    text-align: left;
+    background: #F7F7F5;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.panel {
+    max-height: 0;
+    background-color: #F7F7F5;
+    overflow: hidden;
+    opacity: 0;
+    margin-bottom: 0;
+}
+
+.panel p {
+    font-size: 16px;
+    text-decoration: none;
+    margin-bottom: 0;
+    padding: 9px 9px 9px 13px;
+    font-family: 'proxima-nova';
+    color: #8C8C8C;
+}
+
+.panel p:hover{
+  background-color: #fff;
+  text-decoration: none;
+}
+
+.active > i.icon-explore:before{
+  color: #E96657;
+}
+
+.active > i.icon-automate:before{
+  color: #37979C;
+}
+
+.active > i.icon-publish:before{
+  color: #D6434D;
+}
+
+.active > i.icon-analyse:before{
+  color: #52C2AC;
+}
+
+.active > i.icon-settings:before{
+  color: #8CC0D6;
+}
+
+.nth-explore p:hover:nth-child(1n){
+  border-left: 4px solid #E96657;
+  padding: 9px;
+}
+
+.nth-automate p:hover:nth-child(1n){
+  border-left: 4px solid #37979C;
+  padding: 9px;
+}
+
+.nth-publish p:hover:nth-child(1n){
+  border-left: 4px solid #D6434D;
+  padding: 9px;
+}
+
+.nth-analyse p:hover:nth-child(1n){
+  border-left: 4px solid #52C2AC;
+  padding: 9px;
+}
+
+.nth-settings p:hover:nth-child(1n){
+  border-left: 4px solid #8CC0D6;
+  padding: 9px;
+}
+
+.panel.show {
+    max-height: 100%;
+    display: block !important;
+    opacity: 1;
+    border-radius: 0;
+    box-shadow: 1px 1px 6px -3px rgba(0, 0, 0, 1) inset;
+}
+
+/* 4. CONTENT */
+#page-content-wrapper {
+    padding: 20px;
+    position: relative;
+}
